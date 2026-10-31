@@ -6,7 +6,7 @@ function showSection(id){
 
 // --- AI INTEGRATION ---
 // Free Gemini API key: https://aistudio.google.com/app/apikey nunchi teesuko
-const API_KEY = "..";
+const API_KEY = "AQ.Ab8RN6KT96P2Z-3dDnl3PjYdgqjVGEo3rWBoRdAj8xQzrahF3w";
 async function askAI() {
     const input = document.getElementById("userInput").value.trim();
     const chatBox = document.getElementById("chatBox");
