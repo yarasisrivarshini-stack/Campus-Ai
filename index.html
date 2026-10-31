@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusAI - Smart College Assistant</title>
+    <link rel="stylesheet"href="style.css">
+    </head>
+    <body>
+    <header>
+        <h1>🎓 CampusAI</h1>
+        <p>Smart College Assistant</p>
+        <nav>
+            <button onclick="showSection('ai')">AI Assistant</button>
+            <button onclick="showSection('summarizer')">Notes Summarizer</button>
+            <button onclick="showSection('notice')">Notice +Board</button>
+            <button onclick="showSection('materials')">Study Materials</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- AI Study Assistant -->
+        <section id="ai" class="card active">
+            <h2>AI Study Assistant</h2>
+            <div id="chatBox" class="chat-box"></div>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Ex: Explain OOPS concepts simply...">
+                <button onclick="askAI()">Ask</button>
+            </div>
+        </section>
+
+        <!-- Notes Summarizer -->
+        <section id="summarizer" class="card">
+            <h2>Notes Summarizer</h2>
+            <textarea id="notesInput" placeholder="Paste your lengthy notes here..."></textarea>
+            <button onclick="summarizeNotes()">Summarize</button>
+            <div id="summaryOutput" class="output"></div>
+        </section>
+
+     <!-- Notice Board -->
+<section id="notice" class="card">
+    <h2>📢 College Notice Board</h2>
+    <p>Stay updated with college announcements.</p>
+
+    <input
+        type="text"
+        id="noticeSearch"
+        placeholder="Search notices..."
+        oninput="filterNotices()"
+    >
+
+    <div id="noticeList">
+        <div class="notice" data-category="Exams">
+            <strong>📚 Exams</strong>
+            <p>Mid Exams from November 10 - CSE Department</p>
+            <small>Deadline: November 10</small>
+        </div>
+
+        <div class="notice" data-category="Events">
+            <strong>🎉 Events</strong>
+            <p>Mini Project Expo on November 15</p>
+            <small>Date: November 15</small>
+        </div>
+
+        <div class="notice" data-category="Fees">
+            <strong>💳 Fees</strong>
+            <p>Last date for fee payment is November 5</p>
+            <small>Deadline: November 5</small>
+        </div>
+    </div>
+
+    <h3>Post a New Notice</h3>
+    <input
+        type="text"
+        id="newNotice"
+        placeholder="Enter a new college notice..."
+    >
+
+    <select id="noticeCategory">
+        <option value="General">General</option>
+        <option value="Exams">Exams</option>
+        <option value="Events">Events</option>
+        <option value="Fees">Fees</option>
+        <option value="Projects">Projects</option>
+    </select>
+
+    <button onclick="addNotice()">Post Notice</button>
+</section>
+
+       <!-- Study Materials -->
+<section id="materials" class="card">
+    <h2>Study Materials</h2>
+    <p>Choose a subject to access sample notes and PDF files.</p>
+
+    <div class="material-card">
+        <h3>Database Management System (DBMS)</h3>
+        <p>Learn about databases, keys, normalization, SQL and transactions.</p>
+        <button onclick="showNotes('dbms')">View Website Notes</button>
+        <a href="materials/DBMS_Sample_Notes.pdf" target="_blank">Open DBMS PDF</a>
+    </div>
+
+    <div class="material-card">
+        <h3>Python Programming</h3>
+        <p>Learn Python variables, data types, operators, loops and functions.</p>
+        <button onclick="showNotes('python')">View Website Notes</button>
+        <a href="materials/Python_Sample_Notes.pdf" target="_blank">Open Python PDF</a>
+    </div>
+
+    <div class="material-card">
+        <h3>Software Engineering</h3>
+        <p>Learn SDLC, software models, requirements and testing.</p>
+        <button onclick="showNotes('se')">View Website Notes</button>
+        <a href="materials/Software_Engineering_Sample_Notes.pdf" target="_blank">Open Software Engineering PDF</a>
+    </div>
+
+     <!-- 4. OOAD -->
+<div class="material-card">
+    <h3>Object Oriented Analysis and Design (OOAD)</h3>
+    <p>Learn classes, objects, UML diagrams and software design.</p>
+    <button onclick="showNotes('ooad')">View Website Notes</button>
+    <a href="materials/OOAD_Sample_Notes.pdf" target="_blank">Open OOAD PDF</a>
+</div>
+
+<!-- 5. Artificial Intelligence -->
+<div class="material-card">
+    <h3>Artificial Intelligence (AI)</h3>
+    <p>Learn intelligent agents, machine learning and AI applications.</p>
+    <button onclick="showNotes('ai')">View Website Notes</button>
+    <a href="materials/AI_Sample_Notes_One_Page.pdf" target="_blank">Open AI PDF</a>
+</div>
+
+<!-- 6. CNIP -->
+<div class="material-card">
+    <h3>Computer Networks and Internet Protocols (CNIP)</h3>
+    <p>Learn network models, protocols and internet communication.</p>
+    <button onclick="showNotes('cnip')">View Website Notes</button>
+    <a href="materials/CNIP_Sample_Notes_One_Page.pdf" target="_blank">Open CNIP PDF</a>
+</div>
+
+<!-- 7. Green Building -->
+<div class="material-card">
+    <h3>Green Building (GB)</h3>
+    <p>Learn sustainable materials, energy efficiency and green buildings.</p>
+    <button onclick="showNotes('gb')">View Website Notes</button>
+    <a href="materials/GB_Sample_Notes_One_Page.pdf" target="_blank">Open GB PDF</a>
+</div>
+
+<!-- 8. ATCD -->
+<div class="material-card">
+    <h3>Automata Theory and Compiler Design (ATCD)</h3>
+    <p>Learn automata, regular expressions, grammars and compiler phases.</p>
+    <button onclick="showNotes('atcd')">View Website Notes</button>
+    <a href="materials/ATCD_Sample_Notes_One_Page.pdf" target="_blank">Open ATCD PDF</a>
+</div>
+<!-- 9. Introduction to Quantum Technologies and Applications -->
+<div class="material-card">
+    <h3>Introduction to Quantum Technologies and Applications (IQTA)</h3>
+    <p>Learn quantum computing, qubits, superposition, entanglement and quantum applications.</p>
+    <button onclick="showNotes('iqta')">View Website Notes</button>
+    <a href="materials/IQTA_Sample_Notes_One_Page.pdf" target="_blank">Open IQTA PDF</a>
+</div>
+</div id="websiteNotes"class="output"></div>
+</section>
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>

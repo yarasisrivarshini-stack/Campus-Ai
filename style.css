@@ -1,0 +1,99 @@
+body { font-family: Arial; margin: 0; background: #f4f6fb; }
+header { background: #4f46e5; color: white; padding: 20px; text-align: center; }
+nav button { margin: 5px; padding: 10px 15px; border: none; border-radius: 8px; cursor: pointer; background: white; color: #4f46e5; font-weight: bold; }
+.card { display: none; max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.card.active { display: block; }
+.chat-box { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 8px; }
+.input-area { display: flex; gap: 10px; }
+input, textarea { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
+button { background: #4f46e5; color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; }
+.output { margin-top: 15px; background: #eef2ff; padding: 15px; border-radius: 8px; }
+.notice { background: #fff7ed; border-left: 4px solid #f59e0b; padding: 10px; margin: 8px 0; border-radius: 6px; }
+/* Notice Board */
+#noticeSearch,
+#newNotice,
+#noticeCategory {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#noticeList {
+    margin: 15px 0;
+}
+
+.notice {
+    background: #f2f6ff;
+    border-left: 5px solid #2563eb;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.notice strong {
+    color: #1d4ed8;
+}
+
+.notice p {
+    margin: 8px 0;
+}
+
+.notice small {
+    color: #555;
+}
+/* Notes Summarizer */
+#summarizer {
+max-width: 900px;
+margin: 20px auto;
+padding: 25px;
+box-sizing: border-box;
+}
+
+/* Make the Notes Box Long */
+#notesInput {
+display: block;
+width: 100%;
+height: 300px;
+padding: 15px;
+margin-bottom: 15px;
+box-sizing: border-box;
+border: 2px solid #c7d2fe;
+border-radius: 10px;
+font-size: 16px;
+}
+
+/* Summarize Button Below the Box */
+#summarizer button {
+display: block;
+width: 100%;
+margin-top: 10px;
+padding: 14px;
+background: #4f46e5;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+/* Summary Output Below the Button */
+#summaryOutput {
+display: block;
+width: 100%;
+min-height: 100px;
+margin-top: 20px;
+padding: 20px;
+box-sizing: border-box;
+background: #eef2ff;
+border-left: 5px solid #4f46e5;
+border-radius: 10px;
+white-space: pre-wrap;
+overflow-wrap: anywhere;
+line-height: 1.7;
+}
